@@ -1,0 +1,78 @@
+@EndUserText.label : 'Database Table for Setup Approval Grooving Header'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zqm_gr_setup_app {
+
+  key mandt               : mandt not null;
+  key cuuid               : sysuuid_x16 not null;
+  inspectionlot           : abap.numc(12) not null;
+  lotcreate               : abap.dats;
+  startofinsp             : abap.dats;
+  endofinsp               : abap.dats;
+  plant                   : werks_d;
+  material                : matnr;
+  customer                : abap.char(80);
+  baseunit                : abap.unit(3);
+  manufacturingorder      : abap.char(12);
+  inspectionlotobjecttext : abap.char(40);
+  batch                   : charg_d;
+  supplier                : elifn;
+  manufacturer            : lifnr;
+  inspectionoperation     : abap.char(4);
+  inspection              : abap.char(5);
+  salesorder              : vbeln_va;
+  drgno                   : atwrt;
+  rm_specification        : atwrt;
+  grade                   : atwrt;
+  partno                  : atwrt;
+  operationtext           : ltxa1;
+  workcentertext          : abap.char(40);
+  operationconfirmation   : co_rueck;
+  shift                   : abap.char(10);
+  operatorname            : abap.char(20);
+  previousopt             : abap.char(40);
+  nextopt                 : abap.char(40);
+  filename                : abap.char(128) not null;
+  attachments             : zde_pdf_setup;
+  mimetype                : abap.char(128);
+  materialdescription     : abap.char(256);
+  customername            : abap.char(80);
+  qty_chkd                : abap.char(30);
+  inv_no                  : abap.char(30);
+  inv_date                : abap.dats;
+  cust_draw               : abap.char(30);
+  sks_draw                : abap.char(30);
+  materiallongtxt         : abap.char(80);
+  filename_ul             : abap.char(128) not null;
+  attachments_ul          : zde_pdf_setup;
+  mimetype_ul             : abap.char(128);
+  formtype                : abap.char(20);
+  refnum                  : abap.char(20);
+  partdesc                : abap.char(20);
+  rawmatspec              : abap.char(20);
+  operator                : abap.char(20);
+  currentoperationno      : abap.char(20);
+  operationdetails        : abap.char(20);
+  inspector               : abap.char(20);
+  previousoperation       : abap.char(20);
+  nextoperation           : abap.char(20);
+  dateshift               : abap.char(20);
+  machine                 : abap.char(20);
+  remarks                 : abap.char(250);
+  inspectby               : abap.char(20);
+  submittedtoprd          : abap.dats;
+  submittedtoqa           : abap.dats;
+  submittedtoprd_time     : abap.tims;
+  submittedtoqa_time      : abap.tims;
+  setupapprovalno         : abap.char(20);
+  zdate                   : abap.dats;
+  created_on              : abp_creation_tstmpl;
+  created_by              : abp_creation_user;
+  changed_on              : abp_lastchange_tstmpl;
+  changed_by              : abp_lastchange_user;
+  local_last_changed_on   : abp_locinst_lastchange_tstmpl;
+  local_last_changed_by   : abp_locinst_lastchange_user;
+
+}
