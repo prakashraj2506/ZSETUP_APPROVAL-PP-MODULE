@@ -1,0 +1,25 @@
+@EndUserText.label : 'Database Table for Setup Approval Grooving Item'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zqm_gr_setup_ap2 {
+
+  key client     : abap.clnt not null;
+  key cuuid      : sysuuid_x16 not null;
+  key itemno     : abap.numc(5) not null;
+  parameters     : abap.char(60);
+  specifications : abap.char(60);
+  mmr            : abap.char(60);
+  obs1           : abap.numc(5);
+  obs2           : abap.numc(5);
+  obs3           : abap.numc(5);
+  obs4           : abap.numc(5);
+  obs5           : abap.numc(5);
+  obs1_t         : abap.char(20);
+  obs2_t         : abap.char(20);
+  obs3_t         : abap.char(20);
+  obs4_t         : abap.char(20);
+  obs5_t         : abap.char(20);
+
+}
